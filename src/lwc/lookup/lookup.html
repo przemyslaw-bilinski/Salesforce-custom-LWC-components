@@ -1,0 +1,59 @@
+<template>
+    <div class={recordClass}
+         data-id="resultBox"
+         aria-expanded="false"
+         aria-haspopup="listbox"
+         role="combobox">
+            <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right"
+            role="none">
+                    <lightning-input placeholder="Search..."
+                             name="searchText"
+                             label={label}
+                             value={recordName}
+                             required={isRequired}
+                             disabled={isReadOnly}
+                             autocomplete="false"
+                             onchange={handleSearch}>
+                </lightning-input>
+                <div if:true={recordResetIconVisible}>
+                    <button class="slds-input__icon slds-input__icon_right slds-button slds-button_icon iconheight"
+                            onclick={clearSelectedRecord}>
+                        <lightning-icon class="slds-icon slds-icon slds-icon_small slds-icon-text-default reset-icon"
+                                        icon-name="utility:clear"
+                                        size="x-small"
+                                        alternative-text="icon" ></lightning-icon>
+                        <span class="slds-assistive-text">Clear</span></button>
+                </div>
+            <div id="listbox-id-1" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox">
+                <template if:true={records}>
+                    <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                        <template for:each={records} for:item="record">
+                            <li role="presentation" class="slds-listbox__item" key={record.Id}>
+                                <div class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+                                     data-id={record.Id}
+                                     data-name={record.Name}
+                                     onclick={setSelectedRecord}
+                                     role="option">
+                                <span class="slds-media__figure">
+                                    <span class="slds-icon_container slds-icon-standard-account">
+                                        <lightning-icon icon-name={iconName} class="slds-icon slds-icon slds-icon_small slds-icon-text-default" size="small"></lightning-icon>
+                                    </span>
+                                </span>
+                                    <span class="slds-media__body">
+                                    <span class="slds-listbox__option-text slds-listbox__option-text_entity">{record.Name}</span>
+                                    <template if:true={secondField}>
+                                      <c-lookup-second-field record={record} field-api-name={secondField}></c-lookup-second-field>
+                                    </template>
+                                </span>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+                <template if:true={noRecordsFound}>
+                   No results found
+                </template>
+            </div>
+        </div>
+    </div>
+</template>
