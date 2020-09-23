@@ -24,3 +24,9 @@ onlookupchanged=""
 - ***is-required*** true/false, if you want this fields to be required or not,
 - ***icon-name*** icon which appear on each record in list, [https://www.lightningdesignsystem.com/icons/]
 - ***onlookupchanged*** custom event to pass data to parent, catch this with your function (contains *Id* and *Record name*).
+<pre>
+</pre>
+<p align="center">
+  <p>Example:</p>
+  <img width="60%" src="https://github.com/bilinskip/Salesforce-lookup-custom-component-LWC/blob/master/lookup-example.png">
+</p>
