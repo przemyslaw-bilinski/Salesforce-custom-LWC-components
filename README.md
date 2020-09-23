@@ -21,6 +21,6 @@ onlookupchanged=""
 - ***field-set-name*** api name of you field set. Quried fields depends on that fieldset,
 - ***second-field*** api name of the second field that you also want to show on each record when list show up. If you dont need second field put empty bracket here,
 - ***is-readonly*** true/false, if you want this field to be readonly or not,
-- ***is-required*** true/false, if you want this fields to be choose or not,
+- ***is-required*** true/false, if you want this fields to be required or not,
 - ***icon-name*** icon which appear on each record in list, [https://www.lightningdesignsystem.com/icons/]
 - ***onlookupchanged*** custom event to pass data to parent, catch this with your function (contains *Id* and *Record name*).
