@@ -1,4 +1,4 @@
-# Salesforce-lookup-custom-component-LWC
+# Salesforce custom components
 
 
 My custom lookup component using Lightning Web Components.
