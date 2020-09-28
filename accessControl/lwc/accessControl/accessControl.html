@@ -1,0 +1,8 @@
+<template>
+    <div if:true={access.data}>
+        <slot></slot>
+    </div>
+    <div if:false={access.data}>
+        <c-rich-text-card text={errorMessage}></c-rich-text-card>
+    </div>
+</template>
