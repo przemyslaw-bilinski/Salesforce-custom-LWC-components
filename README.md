@@ -4,18 +4,7 @@
 My custom lookup component using Lightning Web Components.
 
 To use you need to put some attributes in parent component
-```html
-<c-lookup
-  label=""
-  object-api-name=""
-  field-set-name=""
-  second-field=""
-  is-readonly=""
-  is-required=""
-  icon-name=""
-  onlookupchanged=""
-></c-lookup>
-```
+
 - ***label*** name of the input e.g. *Search Accounts*, *Opportunities...*,
 - ***object-api-name*** api name of an object that you want to query, e.g. *Account*, *Opportunity*,
 - ***field-set-name*** api name of you field set. Quried fields depends on that fieldset,
@@ -29,6 +18,13 @@ Sample usage:
 ```html
 <c-lookup
      label="Account search"
+     object-api-name="Account"
+     field-set-name="AccountFieldSet"
+     second-field="Phone"
+     is-readonly="false"
+     is-required="true"
+     icon-name="standard:account"
+     onlookupchanged={handleAccountChange}
 </c-lookup>
 ```
 
