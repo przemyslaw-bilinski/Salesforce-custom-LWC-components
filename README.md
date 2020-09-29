@@ -1,7 +1,7 @@
 # Salesforce custom components
 
 ## Lookup (/lookup)
-My custom lookup component using Lightning Web Components.
+My custom lookup component.
 
 To use you need to put some attributes in parent component
 | Attribute name | Description |
